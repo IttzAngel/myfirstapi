@@ -20,7 +20,7 @@ public class StudentController {
 
     //get all the students
     @GetMapping("/students")
-    public List<Student> getAllStudents(){
+    public Iterable<Student> getAllStudents(){
         //return a list of all the students
         return studentService.getStudents();
     }
@@ -29,11 +29,16 @@ public class StudentController {
     public void addStudent(@RequestBody Student student){
         studentService.addStudent(student);
     }
-
-    @DeleteMapping("/students/{id}")
-    public void removeStudent(@PathVariable Long id){
-        studentService.removeStudent(id);
-    }
+//
+//    @DeleteMapping("/students/{id}")
+//    public void removeStudent(@PathVariable Long id){
+//        studentService.removeStudent(id);
+//    }
+//
+//    @PutMapping("/students/{id}")
+//    public void editStudent(@PathVariable Long id, @RequestBody Student student){
+//            studentService.editStudent(id, student);
+//    }
 
 
 }
