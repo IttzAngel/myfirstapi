@@ -30,9 +30,9 @@ public class StudentController {
         studentService.addStudent(student);
     }
 
-    @DeleteMapping("/students")
-    public void removeStudent(@RequestBody Student student){
-        studentService.removeStudent(student);
+    @DeleteMapping("/students/{id}")
+    public void removeStudent(@PathVariable Long id){
+        studentService.removeStudent(id);
     }
 
 

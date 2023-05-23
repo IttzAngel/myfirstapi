@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 @Service
 public class StudentService {
-    private Long id;
 
     //Fake DataBase/DB
     private List<Student> students = new ArrayList<>(
@@ -31,11 +31,20 @@ public class StudentService {
         students.add(student);
     }
 
-    public void removeStudent(Student student){
-        for (Student s:students) {
+    public void removeStudent(Long id){
+        for (Student student : students) {
+            if(student.getId().equals(id)){
                 students.remove(student);
+            }
         }
+    }
 
+    public void editStudent(Long id, Student student){
+        for (Student q : students) {
+            if(q.getId().equals(id)){
+                
+            }
+        }
     }
 
 
