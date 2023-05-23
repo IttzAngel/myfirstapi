@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class StudentService {
+    private Long id;
 
     //Fake DataBase/DB
     private List<Student> students = new ArrayList<>(
@@ -31,7 +32,10 @@ public class StudentService {
     }
 
     public void removeStudent(Student student){
-        students.remove(student);
+        for (Student s:students) {
+                students.remove(student);
+        }
+
     }
 
 

@@ -31,7 +31,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/students")
-    public void removeStudent(Student student){
+    public void removeStudent(@RequestBody Student student){
         studentService.removeStudent(student);
     }
 
