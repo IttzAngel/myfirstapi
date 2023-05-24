@@ -4,12 +4,8 @@ import com.buildapi.myfirstapi.model.Student;
 import com.buildapi.myfirstapi.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class StudentService {
@@ -34,6 +30,18 @@ public class StudentService {
     //add a student to db list
     public void addStudent(Student student){
         studentRepository.save(student);
+    }
+
+    public void removeStudent(Long id){
+        studentRepository.deleteById(id);
+    }
+
+    public void editStudent(Long id, Student student){
+        studentRepository.save(student);
+    }
+
+    public Optional<Student> getStudentById(Long id){
+        return studentRepository.findById(id);
     }
 //
 //    public void removeStudent(Long id){
